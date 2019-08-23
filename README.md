@@ -1,5 +1,5 @@
 # PukiWiki_Minimal
 PukiWiki サンプルスキン
 
-# Demo
+## Demo
 http://design.kyusan-u.ac.jp/pukiwiki_minimal/
