@@ -1,6 +1,7 @@
 <?php
 // PukiWiki - Yet another WikiWikiWeb clone.
-// $Id: sonots $
+// Author sonots
+// 2005-02-07
 
 // 見出しアンカーの書式
 define('PLUGIN_CONTENTS2_1_ANCHOR_PREFIX', '#content_');
