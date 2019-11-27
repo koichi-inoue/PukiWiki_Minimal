@@ -144,6 +144,11 @@ hr.short_line {
   border: none;
 }
 
+/* image.inc.php ref.inc.php */
+div.img_margin {
+  margin:0;
+}
+
 
 /***************** LAYOUT ******************/
 
