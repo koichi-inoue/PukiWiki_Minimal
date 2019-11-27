@@ -304,7 +304,7 @@ div#main img{
 footer {
   width: 80%;
   max-width: 960px;
-  padding: 3rem;
+  padding: 2rem 3rem;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0;
@@ -313,6 +313,7 @@ footer {
 
   div#toolbar {
     margin-bottom: 1rem;
+    text-align:left;
   }
 
   div#signature {
