@@ -7,28 +7,93 @@
  *   2001-2002 Originally written by yu-ji
  * License: GPL v2 or (at your option) any later version
  *
- * PukiWiki Minimal CSS
+ * Default CSS
  */
 
-/*************  BASIC *****************/
-
-body{
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
-  margin: 0;
-  color: #666;
+pre, dl, ol, p, blockquote {
+  line-height:130%;
+}
+blockquote {
+  margin-left:32px;
+}
+body,td {
+  color:black;
+  background-color:white;
+  margin-left:2%;
+  margin-right:2%;
+  font-size:90%;
+  font-family:verdana, arial, helvetica, Sans-Serif;
 }
 
-a {
-  color: black;
-  text-decoration: none;
+a:link {
+  color:#215dc6;
+  background-color:inherit;
+  text-decoration:none;
 }
-
+a:active {
+  color:#215dc6;
+  background-color:#CCDDEE;
+  text-decoration:none;
+}
+a:visited {
+  color:#a63d21;
+  background-color:inherit;
+  text-decoration:none;
+}
 a:hover {
-  color: #58F;
+  color:#215dc6;
+  background-color:#CCDDEE;
+  text-decoration:underline;
+}
+a.external-link:not(.external-link-silent)::after {
+  content:url(../image/external-link.png);
+  margin:3px;
 }
 
-h1,h2,h3,h4,h5,h6{
-  color: #333;
+h1, h2 {
+  font-family:verdana, arial, helvetica, Sans-Serif;
+  color:inherit;
+  background-color:#DDEEFF;
+  padding:.3em;
+  border:0px;
+  margin:0px 0px .5em 0px;
+}
+h3 {
+  font-family:verdana, arial, helvetica, Sans-Serif;
+  border-bottom:3px solid #DDEEFF;
+  border-top:1px solid #DDEEFF;
+  border-left:10px solid #DDEEFF;
+  border-right:5px solid #DDEEFF;
+
+  color:inherit;
+  background-color:#FFFFFF;
+  padding:.3em;
+  margin:0px 0px .5em 0px;
+}
+h4 {
+  font-family:verdana, arial, helvetica, Sans-Serif;
+  border-left:18px solid #DDEEFF;
+
+  color:inherit;
+  background-color:#FFFFFF;
+  padding:.3em;
+  margin:0px 0px .5em 0px;
+}
+h5, h6 {
+  font-family:verdana, arial, helvetica, Sans-Serif;
+  color:inherit;
+  background-color:#DDEEFF;
+  padding:.3em;
+  border:0px;
+  margin:0px 0px .5em 0px;
+}
+h1.title {
+  font-size:30px;
+  font-weight:bold;
+  background-color:transparent;
+  padding:12px 0px 0px 0px;
+  border:0px;
+  margin:12px 0px 0px 0px;
 }
 
 dt {
@@ -38,20 +103,28 @@ dt {
 }
 
 pre {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  padding: 1rem;
+  border-top:#DDDDEE 1px solid;
+  border-bottom:#888899 1px solid;
+  border-left:#DDDDEE 1px solid;
+  border-right:#888899 1px solid;
+  padding:.5em;
+  margin-left:1em;
+  margin-right:2em;
   white-space:pre-wrap;
   word-wrap:break-word;
-  overflow: auto;
-  background: #EEE;
+  color:black;
+  background-color:#F0F8FF;
 }
 
-ul,ol {
-  margin-top: 0.5rem;
-  margin-bottom: 1.5rem;
-  margin-left: 0px !important;
-  padding-left: 16px;
+img {
+  border:none;
+  vertical-align:middle;
+}
+
+ul {
+  margin-top:.5em;
+  margin-bottom:.5em;
+  line-height:130%;
 }
 
 em {
@@ -134,19 +207,13 @@ ol.list3 {
 div.ie5 {
   text-align:center;
 }
-
 span.noexists {
   color:inherit;
   background-color:#FFFACC;
 }
 
-.small{
-  font-size: 0.75rem;
-}
-
-.note_super{
-  font-size: 0.75rem;
-  vertical-align: top;
+.small {
+  font-size:80%;
 }
 
 .super_index {
@@ -166,17 +233,8 @@ a.note_super {
 }
 
 div.jumpmenu {
-  visibility:hidden;
-  /*
   font-size:60%;
   text-align:right;
-  */
-}
-
-hr {
- border:none;
- border-top: dotted 1px #CCCCCC;
- height: 1px
 }
 
 hr.full_hr {
@@ -184,17 +242,13 @@ hr.full_hr {
   border-color:#333333;
   border-width:1px 0px;
 }
-
 hr.note_hr {
-  visibility:hidden;
-  /*
   width:90%;
   border-style:ridge;
   border-color:#333333;
   border-width:1px 0px;
   text-align:center;
   margin:1em auto 0em auto;
-  */
 }
 
 span.size1 {
@@ -282,178 +336,102 @@ strong.word9 {
   color:white;
 }
 
-
-
-/***************** LAYOUT ******************/
-
-/* HEADER */
-
-header {
-  position: relative;
-  width: 100%;
-  height: 80px;
-  background: #444;
-  box-shadow: 0 3px 0.3125rem rgba(0,0,0,.4);
+/* html.php/edit_form() */
+.edit_form {
+  clear:both;
 }
 
-  #logo {
-    position: absolute;
-    top: 20px;
-    left: 40px;
-    width: 40px;
-  }
-
-  header h1 {
-    position: absolute;
-    top: 0;
-    left: 100px;
-  }
-
-  header h1 a {
-    font-size: 1.5rem;
-    font-weight: 200;
-    color: #FFF;
-  }
-
-/* MAIN BLOCK */
-
-div#main {
-  width: 960px;
-  padding: 5rem 0;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2rem;
+/* pukiwiki.skin.php */
+div#header {
+  padding:0px;
+  margin:0px;
 }
 
-div#main img{
-	max-width: 100%;
-	height: auto;
+div#navigator {
+  clear:both;
+  padding:4px 0px 0px 0px;
+  margin:0px;
 }
 
-/* MAIN BLOCK in READ MODE */
-
-#read {
-  display: flex;
-  flex-direction: row-reverse;
+td.menubar {
+  width:9em;
+  vertical-align:top;
 }
 
-  #read nav {
-    flex:1;
-    min-width: 12rem;
-    word-break:break-all;
-    font-size:0.8rem;
-    overflow:hidden;
-  }
-
-  #read nav h5 {
-    font-size:1rem;
-  }
-
-  #read  nav ul {
-    margin-bottom: 0.5rem;
-  }
-
-  #read article {
-    flex: 3;
-    margin-right: 4rem;
-  }
-
-  #read article li,
-  #read article p {
-    line-height: 180%;
-  }
-
-  /* MenuBar上の検索ボックスをシンプルに */
-  #read nav form{
-    position: absolute;
-    top:30px;
-    right:3rem;
-  }
-  #read nav form label {
-    display: none;
-  }
-
-  #read nav input[name="word"]{
-    width:96% !important;
-  }
-
-  #read nav input[type="submit"]{
-    display: none;
-  }
-
-
-#note {
-  margin-bottom: 1rem;
+div#menubar {
+  width:9em;
+  padding:0px;
+  margin:4px;
+  word-break:break-all;
+  font-size:90%;
+  overflow:hidden;
+}
+div#menubar ul {
+  margin:0px 0px 0px .5em;
+  padding:0px 0px 0px .5em;
+}
+div#menubar ul li {
+  line-height:110%;
+}
+div#menubar h4 {
+  font-size:110%;
 }
 
-#attach {
-  margin-bottom: 1rem;
-  font-size: 0.75rem;
+div#body {
+  padding:0px;
+  margin:0px 0px 0px .5em;
 }
-
-#lastmodified {
-  font-size:0.75rem;
-  margin-bottom: 1rem;
+div#note {
+  clear:both;
+  padding:0px;
+  margin:0px;
 }
-
-#related {
-  font-size:0.75rem;
-  margin-bottom: 1rem;
+div#attach {
+  clear:both;
+  padding:0px;
+  margin:0px;
 }
-
-/* MAIN BLOCK in EDIT MODE */
-
-#edit{
-  padding-bottom: 2rem;
+div#toolbar {
+  clear:both;
+  padding:0px;
+  margin:0px;
+  text-align:right;
 }
-
-  #edit article{
-
-  }
-
-  #edit textarea{
-    line-height: 150%;
-    margin-bottom: 1rem;
-  }
-
-  #edit li:first-child {
-    list-style-type: none;
-  }
-
-#preview {
-  background-color:#DDDDDD;
+div#lastmodified {
+  font-size:80%;
+  padding:0px;
+  margin:0px;
 }
-
-/* FOOTER */
-
-footer {
-  width: 80%;
-  max-width: 960px;
-  padding: 3rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 0;
-  background: #DDD;
+div#related {
+  font-size:80%;
+  padding:0px;
+  margin:16px 0px 0px 0px;
 }
-
-  div#toolbar {
-    margin-bottom: 1rem;
-  }
-
-  div#signature {
-    font-size:0.75rem;
-  }
-
-
-/****** PUKIWIKI CLASS ******/
+div#related .page_passage {
+  font-size:60%;
+}
+div#footer {
+  font-size:70%;
+  padding:0px;
+  margin:16px 0px 0px 0px;
+}
+div#banner {
+  float:right;
+  margin-top:24px;
+}
+div#preview {
+  color:inherit;
+  background-color:#F5F8FF;
+}
+img#logo {
+  float:left;
+  margin-right:20px;
+}
 
 /* aname.inc.php */
 .anchor_super {
-  visibility:hidden;
-  /*
   font-size:xx-small;
   vertical-align:super;
-  */
 }
 
 /* list.inc.php */
@@ -565,17 +543,11 @@ span.diff_removed {
 
 /* hr.inc.php */
 hr.short_line {
-  width: 100%;
-  height: 1px;
-  background-color: #afafaf;
-  border: none;
-  /*
   text-align:center;
   width:80%;
   border-style:solid;
   border-color:#333333;
   border-width:1px 0px;
-  */
 }
 
 /* include.inc.php */
@@ -620,6 +592,12 @@ span.new5 {
 /* popular.inc.php */
 span.counter {
   font-size:70%;
+}
+
+/* ref.inc.php */
+div.img_margin {
+  margin-left:32px;
+  margin-right:32px;
 }
 
 /* vote.inc.php */

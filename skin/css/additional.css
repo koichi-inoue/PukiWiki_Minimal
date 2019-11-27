@@ -1,0 +1,315 @@
+@charset "UTF-8";
+
+/**************************************
+
+       PukiWiki Additional CSS
+
+***************************************/
+
+/*************  BASIC *****************/
+
+body{
+  color: #666;
+  margin: 0;
+  font-size:100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+  font-weight: normal;
+}
+
+a:link {
+  color: black;
+  background-color:inherit;
+  text-decoration:none;
+}
+a:active {
+  color: black;
+  background-color:#CCDDEE;
+}
+a:visited {
+  color: black;
+}
+a:hover {
+  color: #58F;
+  background-color:transparent;
+}
+
+h1,h2,h3,h4,h5,h6{
+  color: #333;
+}
+
+h1, h2 {
+  font-family:inherit;
+  color: #333;
+  background-color:transparent;
+  padding:0;
+  border:0;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-family:inherit;
+  border: none;
+  color: #333;
+  background-color:transparent;
+  padding: 0;
+  margin-bottom: 0.5rem;
+}
+
+h4 {
+  font-family:inherit;
+  border:none;
+  color: #333;
+  background-color:transparent;
+  padding: 0;
+  margin-bottom: 0.5rem;
+}
+
+h5, h6 {
+  font-family:inherit;
+  color: #333;
+  background-color:transparent;
+  padding: 0;
+  border: 0;
+  margin-bottom: 0.5rem;
+
+}
+
+
+dl.list1 {
+  margin: 1rem 0 ;
+  padding: 0;
+}
+
+dt {
+  margin: 0;
+  margin-bottom: 0.5rem;
+  font-weight:bold;
+}
+
+dd {
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+pre {
+  margin: 1rem 0;
+  margin-bottom: 1rem;
+  border: none;
+  padding: 1rem;
+  white-space:pre-wrap;
+  word-wrap:break-word;
+  overflow: auto;
+  color: #333;
+  background: #EEE;
+}
+
+ul,ol {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  margin-left: 0px !important;
+  padding-left: 16px;
+}
+
+a.note_super{
+  font-size: 0.75rem;
+  vertical-align: top;
+}
+
+div.jumpmenu {
+  visibility:hidden;
+}
+
+hr {
+ border:none;
+ border-top: dotted 1px #CCCCCC;
+ height: 1px
+}
+
+hr.note_hr {
+  visibility:hidden;
+}
+
+/* aname.inc.php */
+.anchor_super {
+  visibility:hidden;
+}
+
+/* hr.inc.php */
+hr.short_line {
+  width: 100%;
+  height: 1px;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  background-color: #afafaf;
+  border: none;
+}
+
+
+/***************** LAYOUT ******************/
+
+/***** HEADER *****/
+
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background: #444;
+  box-shadow: 0 3px 0.3125rem rgba(0,0,0,.4);
+}
+
+  #logo {
+    position: absolute;
+    top: 15px;
+    left: 40px;
+    width: 30px;
+  }
+
+  header h1.title {
+    position: absolute;
+    top: 12px;
+    left: 6rem;
+    margin: 0;
+    padding: 0;
+    line-height: 100%;
+  }
+
+  header h1.title a {
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: #FFF;
+  }
+
+  header form{
+    position: absolute;
+    top:20px;
+    right:3rem;
+  }
+
+  header form label {
+    display: none;
+  }
+
+  header input[name="word"]{
+    width:96% !important;
+  }
+
+  header input[type="submit"]{
+    display: none;
+  }
+
+
+/***** MAIN BLOCK *****/
+
+div#main {
+  width: 960px;
+  padding: 5rem 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+}
+
+div#main img{
+	max-width: 100%;
+	height: auto;
+}
+
+/*** MAIN BLOCK in READ MODE ***/
+
+#read {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+  #read nav {
+    flex:1;
+    min-width: 12rem;
+    word-break:break-all;
+    font-size:0.8rem;
+    overflow:hidden;
+  }
+
+  #read nav h5 {
+    font-size:1rem;
+  }
+
+  #read  nav ul {
+    margin-bottom: 0.5rem;
+  }
+
+  #read  nav ul li {
+    margin-bottom: 0.25rem;
+  }
+
+  #read article {
+    flex: 3;
+    margin-right: 4rem;
+  }
+
+  #read article div {
+    line-height: 180%;
+  }
+
+  #read article li,
+  #read article p {
+    margin-top: 0rem;
+    line-height: 180%;
+  }
+
+#note {
+  margin-bottom: 1rem;
+}
+
+#attach {
+  margin-bottom: 1rem;
+  font-size: 0.75rem;
+}
+
+#lastmodified {
+  font-size:0.75rem;
+  margin-bottom: 1rem;
+}
+
+#related {
+  font-size:0.75rem;
+  margin-bottom: 1rem;
+}
+
+/*** MAIN BLOCK in EDIT MODE ***/
+
+#edit {
+  padding-bottom: 2rem;
+}
+
+  #edit textarea{
+    line-height: 150%;
+    margin-bottom: 1rem;
+  }
+
+  #edit li:first-child {
+    list-style-type: none;
+  }
+
+  #preview {
+    background-color:#DDDDDD;
+  }
+
+/***** FOOTER *****/
+
+footer {
+  width: 80%;
+  max-width: 960px;
+  padding: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  background: #DDD;
+}
+
+  div#toolbar {
+    margin-bottom: 1rem;
+  }
+
+  div#signature {
+    font-size:0.75rem;
+  }
