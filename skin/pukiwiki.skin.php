@@ -62,18 +62,25 @@ header('Content-Type: text/html; charset=' . CONTENT_CHARSET);
 <html lang="ja">
 
 <head>
+
   <meta charset="utf-8">
+
   <title><?php echo $title ?> - <?php echo $page_title ?></title>
+
   <script src="skin/js/jquery-3.2.0.min.js"></script>
   <script src="skin/js/lightbox.min.js"></script>
   <script src="skin/js/main.js" defer></script>
   <script src="skin/js/search2.js" defer></script>
-  <script src="skin/js/system.js"></script>
+  <script src="skin/js/script.js"></script>
+
   <link rel="SHORTCUT ICON" href="<?php echo $image['favicon'] ?>" />
+
   <link rel="stylesheet" href="skin/css/lightbox.min.css" media="screen" />
   <link rel="stylesheet" href="skin/css/pukiwiki.css" />
   <link rel="stylesheet" href="skin/css/additional.css" />
+
   <?php echo $head_tag ?>
+
 </head>
 
 <body>
@@ -82,6 +89,7 @@ header('Content-Type: text/html; charset=' . CONTENT_CHARSET);
   <header>
     <h1 class="title"><?php echo $page ?></h1>
     <a href="<?php echo $link['top'] ?>"><img id="logo" src="<?php echo IMAGE_DIR . $image['logo'] ?>" alt="[PukiWiki]" title="[PukiWiki]" /></a>
+		<nav><?php echo convert_html(get_source('SearchBox')) ?></nav>
   </header>
 
   <div id="main">
