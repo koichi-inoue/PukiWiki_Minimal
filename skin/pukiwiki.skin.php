@@ -64,15 +64,15 @@ header('Content-Type: text/html; charset=' . CONTENT_CHARSET);
 <head>
   <meta charset="utf-8">
   <title><?php echo $title ?> - <?php echo $page_title ?></title>
-  <link rel="SHORTCUT ICON" href="<?php echo $image['favicon'] ?>" />
-  <link rel="stylesheet" href="skin/css/lightbox.min.css" media="screen" />
-  <link rel="stylesheet" href="skin/css/pukiwiki.css" />
   <script src="skin/js/jquery-3.2.0.min.js"></script>
   <script src="skin/js/lightbox.min.js"></script>
   <script src="skin/js/main.js" defer></script>
   <script src="skin/js/search2.js" defer></script>
   <script src="skin/js/system.js"></script>
-
+  <link rel="SHORTCUT ICON" href="<?php echo $image['favicon'] ?>" />
+  <link rel="stylesheet" href="skin/css/lightbox.min.css" media="screen" />
+  <link rel="stylesheet" href="skin/css/pukiwiki.css" />
+  <link rel="stylesheet" href="skin/css/additional.css" />
   <?php echo $head_tag ?>
 </head>
 
