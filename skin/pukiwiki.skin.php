@@ -1,8 +1,11 @@
 <?php
 // PukiWiki - Yet another WikiWikiWeb clone.
 // pukiwiki.skin.php
-// Copyright
+//
+// Customized
 //   2019 OpenSquareJP
+//
+// Copyright
 //   2002-2017 PukiWiki Development Team
 //   2001-2002 Originally written by yu-ji
 // License: GPL v2 or (at your option) any later version
@@ -69,12 +72,15 @@ header('Content-Type: text/html; charset=' . CONTENT_CHARSET);
 
   <script src="skin/js/jquery-3.2.0.min.js"></script>
   <script src="skin/js/lightbox.min.js"></script>
+  <!--
   <script src="skin/js/main.js" defer></script>
   <script src="skin/js/search2.js" defer></script>
+  -->
   <script src="skin/js/script.js"></script>
 
   <link rel="SHORTCUT ICON" href="<?php echo $image['favicon'] ?>" />
 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <link rel="stylesheet" href="skin/css/lightbox.min.css" media="screen" />
   <link rel="stylesheet" href="skin/css/pukiwiki.css" />
   <link rel="stylesheet" href="skin/css/additional.css" />
@@ -89,49 +95,55 @@ header('Content-Type: text/html; charset=' . CONTENT_CHARSET);
   <header>
     <h1 class="title"><?php echo $page ?></h1>
     <a href="<?php echo $link['top'] ?>"><img id="logo" src="<?php echo IMAGE_DIR . $image['logo'] ?>" alt="[PukiWiki]" title="[PukiWiki]" /></a>
-		<nav><?php echo convert_html(get_source('SearchBox')) ?></nav>
+		<div id="searchBox"><?php echo convert_html(get_source('SearchBox')) ?></div>
   </header>
 
-  <div id="main">
+  <?php if ($menu !== FALSE) { ?>
 
-    <?php if ($menu !== FALSE) { ?>
+  <div id="readMode">
 
-      <div id="read">
+    <nav>
+      <div id="menuButton"><a href="#"><i class="fas fa-bars"></i></a></div>
+      <div id="menuList"><?php echo convert_html(get_source('MenuBar')) ?></div>
+    </nav>
 
-        <nav><?php echo convert_html(get_source('MenuBar')) ?></nav>
-        <article><?php echo $body ?></article>
+    <article >
 
+      <div id="main">
+        <?php echo $body ?>
       </div>
 
       <hr>
 
       <?php if ($notes != '') { ?>
-        <div id="note"><?php echo $notes ?></div>
+      <div id="note"><?php echo $notes ?></div>
       <?php } ?>
 
       <?php if ($attaches != '') { ?>
-      <div id="attach">
-        <?php echo $attaches ?>
-      </div>
+      <div id="attach"><?php echo $attaches ?></div>
       <?php } ?>
 
       <?php if ($lastmodified != '') { ?>
-        <div id="lastmodified">Last-modified: <?php echo $lastmodified ?></div>
+      <div id="lastmodified">Last-modified: <?php echo $lastmodified ?></div>
       <?php } ?>
 
       <?php if ($related != '') { ?>
-        <div id="related">Link: <?php echo $related ?></div>
+      <div id="related">Link: <?php echo $related ?></div>
       <?php } ?>
 
-    <?php } else { ?>
-
-      <div id="edit">
-        <article><?php echo $body ?></article>
-      </div>
-
-    <?php } ?>
+    </article>
 
   </div>
+
+  <?php } else { ?>
+
+  <div id="editMode">
+
+    <?php echo $body ?>
+
+  </div>
+
+  <?php } ?>
 
   <footer>
     <!-- Toolbar -->
