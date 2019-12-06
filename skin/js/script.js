@@ -1,7 +1,20 @@
 // Menu Toggle /////////////////////////////////////////////////////////////
-$(function (){
 
 const breakPoint = 768;
+
+function ShowAndHide(win){
+  if( win > breakPoint ){
+    $('#menuButton').hide();
+    $('#menuList').show();
+    $('#menuList').css({'flex-direcrion':'row'});
+  } else {
+    $('#menuButton').show();
+    $('#menuButton').removeClass('open');
+    $('#menuList').hide();
+  }
+}
+
+$(function (){
 
   ShowAndHide( $(window).width() );
 
@@ -14,18 +27,6 @@ const breakPoint = 768;
     ShowAndHide( $(window).width() );
   });
 
-  function ShowAndHide(win){
-    if( win > breakPoint ){
-      $('#menuButton').hide();
-      $('#menuList').show();
-      $('#menuList').css({'flex-direcrion':'row'});
-    } else {
-      $('#menuButton').show();
-      $('#menuButton').removeClass('open');
-      $('#menuList').hide();
-    }
-  }
-  
 });
 
 // Smooth Scrool /////////////////////////////////////////////////////////////
