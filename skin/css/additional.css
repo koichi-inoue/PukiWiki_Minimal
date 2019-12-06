@@ -6,7 +6,7 @@
 
 ***************************************/
 
-/*************  BASIC *****************/
+/**************  BASE *****************/
 
 body{
   color: #666;
@@ -16,64 +16,28 @@ body{
   font-weight: normal;
 }
 
-a:link {
-  color: black;
-  background-color:inherit;
-  text-decoration:none;
-}
-a:active {
-  color: black;
-  background-color:#CCDDEE;
-}
+a:link,
+a:active,
 a:visited {
+  background-color: transparent;
   color: black;
 }
 a:hover {
   color: #58F;
-  background-color:transparent;
 }
 
 h1,h2,h3,h4,h5,h6{
-  color: #333;
-}
-
-h1, h2 {
-  font-family:inherit;
-  color: #333;
-  background-color:transparent;
-  padding:0;
-  border:0;
-  margin-bottom: 0.5rem;
-}
-
-h3 {
-  font-family:inherit;
   border: none;
-  color: #333;
-  background-color:transparent;
   padding: 0;
   margin-bottom: 0.5rem;
-}
-
-h4 {
   font-family:inherit;
-  border:none;
-  color: #333;
   background-color:transparent;
-  padding: 0;
-  margin-bottom: 0.5rem;
+  color: #333;
 }
 
-h5, h6 {
-  font-family:inherit;
-  color: #333;
-  background-color:transparent;
-  padding: 0;
-  border: 0;
+p {
   margin-bottom: 0.5rem;
-
 }
-
 
 dl.list1 {
   margin: 1rem 0 ;
@@ -105,7 +69,7 @@ pre {
 
 ul,ol {
   margin-top: 0.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   margin-left: 0px !important;
   padding-left: 16px;
 }
@@ -158,111 +122,161 @@ header {
   position: sticky;
   top: 0;
   width: 100%;
-  height: 60px;
+  height: 4rem;
   background: #444;
   box-shadow: 0 3px 0.3125rem rgba(0,0,0,.4);
+  z-index: 999;
 }
 
-  #logo {
-    position: absolute;
-    top: 15px;
-    left: 40px;
-    width: 30px;
-  }
-
-  header h1.title {
-    position: absolute;
-    top: 12px;
-    left: 6rem;
-    margin: 0;
-    padding: 0;
-    line-height: 100%;
-  }
-
-  header h1.title a {
-    font-size: 1.5rem;
-    font-weight: 200;
-    color: #FFF;
-  }
-
-  header form{
-    position: absolute;
-    top:20px;
-    right:3rem;
-  }
-
-  header form label {
-    display: none;
-  }
-
-  header input[name="word"]{
-    width:96% !important;
-  }
-
-  header input[type="submit"]{
-    display: none;
-  }
-
-
-/***** MAIN BLOCK *****/
-
-div#main {
-  width: 960px;
-  padding: 5rem 0;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2rem;
+#logo {
+  position: absolute;
+  top: 1rem;
+  left: 3rem;;
+  width: 2rem;
 }
 
-div#main img{
+header h1.title {
+  position: absolute;
+  top: 1.2rem;
+  left: 6rem;
+  margin: 0;
+  padding: 0;
+  line-height: 180%;
+  font-size: 1rem;
+  color: #CCC;
+}
+
+header h1.title a {
+  font-size: 1.5rem;
+  color: #FFF;
+}
+
+#searchBox form {
+  position: absolute;
+  top: 1.25rem;
+  right: 3rem;
+}
+
+#searchBox form label { display: none;}
+#searchBox input[name="word"]{ width: 96% !important;}
+#searchBox input[type="submit"]{ display: none;}
+
+@media only screen and (max-width: 768px) {
+  #searchBox form { display: none;}
+}
+
+
+/***** READ MODE CONTAINER *****/
+
+#readMode {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 768px) {
+  #readMode {
+    min-width: 16rem;
+    display: block;
+  }
+}
+
+/* NAVIGATION */
+
+nav {
+  background-color: #EEE;
+}
+
+#menuButton {
+  position: fixed;
+  top: 1rem;
+  right: 3rem;
+  z-index: 9999;
+}
+
+#menuButton a {
+  font-size: 2rem;
+  color: white;
+}
+
+#menuList {
+  width: 10rem;
+  padding: 3rem;
+  font-size:0.8rem;
+  z-index: 999;
+}
+
+@media only screen and (max-width: 768px) {
+  #menuList {
+    position: absolute;
+    top: 4rem;
+    width: 84%;
+    padding: 3rem 8%;
+    font-size: 1rem;
+    background-color: #DDD;
+    opacity: 0.9;
+  }
+}
+
+#menuList h2 { font-size: 1rem;}
+#menuList h5 { font-size: 1rem;}
+#menuList ul { margin-bottom: 0.5rem;}
+#menuList li { margin-bottom: 0.25rem;}
+
+/* MAIN CONTENT */
+
+article {
+  width: 100%;
+  padding: 3rem
+}
+
+@media only screen and (max-width: 768px) {
+  article {
+    width: 84%;
+    padding: 3rem 8%;
+  }
+}
+
+#main {
+  width: 100%;
+}
+
+#main div {
+  line-height: 180%;
+}
+
+#main h3{
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dotted gray;
+}
+
+#main li,
+#main p {
+  margin-top: 0rem;
+  line-height: 180%;
+  text-align: justify;
+}
+
+#main img {
 	max-width: 100%;
 	height: auto;
 }
 
-/*** MAIN BLOCK in READ MODE ***/
-
-#read {
-  display: flex;
-  flex-direction: row-reverse;
+#main iframe {
+	display: block;
 }
 
-  #read nav {
-    flex:1;
-    min-width: 12rem;
-    word-break:break-all;
-    font-size:0.8rem;
-    overflow:hidden;
-  }
+#main textarea,
+#main input {
+  max-width: 90% !important;
+}
 
-  #read nav h5 {
-    font-size:1rem;
-  }
-
-  #read  nav ul {
-    margin-bottom: 0.5rem;
-  }
-
-  #read  nav ul li {
-    margin-bottom: 0.25rem;
-  }
-
-  #read article {
-    flex: 3;
-    margin-right: 4rem;
-  }
-
-  #read article div {
-    line-height: 180%;
-  }
-
-  #read article li,
-  #read article p {
-    margin-top: 0rem;
-    line-height: 180%;
-  }
+/* note attach lastmodified related */
 
 #note {
-  margin-bottom: 1rem;
+  margin-bottom: 1rem !important;
 }
 
 #attach {
@@ -276,46 +290,49 @@ div#main img{
 }
 
 #related {
+  padding: 0 3rem;
   font-size:0.75rem;
   margin-bottom: 1rem;
 }
 
-/*** MAIN BLOCK in EDIT MODE ***/
 
-#edit {
-  padding-bottom: 2rem;
+/***** EDIT MODE CONTAINER *****/
+
+#editMode {
+  width: 70%;
+  max-width: 960px;
+  margin: 3rem auto;
 }
 
-  #edit textarea{
-    line-height: 150%;
-    margin-bottom: 1rem;
-  }
+#editMode textarea{
+  display: block;
+  width: 100% !important;
+  line-height: 150%;
+}
 
-  #edit li:first-child {
-    list-style-type: none;
-  }
+#editMode li:first-child {
+  list-style-type: none;
+}
 
-  #preview {
-    background-color:#DDDDDD;
-  }
+#editMode input[name="preview"]{
+  display: none;
+}
 
 /***** FOOTER *****/
 
 footer {
-  width: 80%;
-  max-width: 960px;
-  padding: 2rem 3rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 0;
-  background: #DDD;
+  padding: 3rem;
+  background: #EEE;
 }
 
-  div#toolbar {
-    margin-bottom: 1rem;
-    text-align:left;
-  }
+div#toolbar {
+  margin-bottom: 1rem;
+  text-align:center;
+}
 
-  div#signature {
-    font-size:0.75rem;
-  }
+div#signature {
+  font-size:0.75rem;
+  text-align:center;
+}
+
+/* EOF */
