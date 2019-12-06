@@ -1,4 +1,34 @@
-// jQuery : Smooth Scrool /////////////////////////////////////////////////////////////
+// Menu Toggle /////////////////////////////////////////////////////////////
+$(function (){
+
+const breakPoint = 768;
+
+  ShowAndHide( $(window).width() );
+
+  $('#menuButton a').on('click', function () {
+    $('#menuList').slideToggle(500);
+    console.log('ok');
+  });
+
+  $(window).resize(function(){
+    ShowAndHide( $(window).width() );
+  });
+
+  function ShowAndHide(win){
+    if( win > breakPoint ){
+      $('#menuButton').hide();
+      $('#menuList').show();
+      $('#menuList').css({'flex-direcrion':'row'});
+    } else {
+      $('#menuButton').show();
+      $('#menuButton').removeClass('open');
+      $('#menuList').hide();
+    }
+  }
+  
+});
+
+// Smooth Scrool /////////////////////////////////////////////////////////////
 
 $(function (){
 
