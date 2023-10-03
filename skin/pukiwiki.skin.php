@@ -3,7 +3,7 @@
 // pukiwiki.skin.php
 //
 // Customized
-//   2019 OpenSquareJP
+//   2023 OpenSquareJP
 //
 // Copyright
 //   2002-2017 PukiWiki Development Team
@@ -50,6 +50,11 @@ $rw    = ! PKWK_READONLY;
 
 // MenuBar
 $menu = arg_check('read') && exist_plugin_convert('menu') ? do_plugin_convert('menu') : FALSE;
+// RightBar
+$rightbar = FALSE;
+if (arg_check('read') && exist_plugin_convert('rightbar')) {
+	$rightbar = do_plugin_convert('rightbar');
+}
 
 // ------------------------------------------------------------
 // Output
